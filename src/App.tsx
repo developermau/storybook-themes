@@ -1,39 +1,25 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import "./App.css";
+import React from "react";
+import styled from "styled-components";
+import { AppButton } from "./stories/AppButton";
+import { WrapperThemeContext } from "./providers/WrapperThemeProvider/WrapperThemeContext";
+
+const WrapperApp = styled.main`
+  align-items: center;
+  display: flex;
+  background-color: ${(props) => props.theme.background};
+  color: ${(props) => props.theme.text};
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+`;
 
 function App() {
-  const [count, setCount] = useState(0);
+  const { theme, toggleTheme } = React.useContext(WrapperThemeContext);
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://reactjs.org" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-      </div>
-      <h1>React + Vite</h1>
-      <h2>On CodeSandbox!</h2>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR.
-        </p>
-
-        <p>
-          Tip: you can use the inspector button next to address bar to click on
-          components in the preview and open the code in the editor!
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    <WrapperApp>
+      <AppButton onClick={toggleTheme}>{theme._name}</AppButton>
+    </WrapperApp>
   );
 }
 
