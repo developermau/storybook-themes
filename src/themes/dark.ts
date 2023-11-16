@@ -6,7 +6,7 @@ export const darkTheme: ThemeType = {
   color: "#fff",
   button: {
     background: "#000",
-    borderColor: "#ffeeaa",
+    borderColor: "#000",
     color: "#ffeeaa",
   },
 };

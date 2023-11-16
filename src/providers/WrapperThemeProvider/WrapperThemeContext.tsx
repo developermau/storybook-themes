@@ -1,5 +1,6 @@
 import React from "react";
 import ThemeType from "../themes/themeTypes.ts";
+import { lightTheme } from "../../themes/light.ts";
 
 export type WrapperThemeContextData = {
   theme: ThemeType;
@@ -7,10 +8,10 @@ export type WrapperThemeContextData = {
 };
 
 export const initialWrapperThemeContext: WrapperThemeContextData = {
-  theme: "light",
+  theme: lightTheme,
   setTheme: () => {},
 };
 
 export const WrapperThemeContext = React.createContext(
-  initialWrapperThemeContext,
+  initialWrapperThemeContext
 );
