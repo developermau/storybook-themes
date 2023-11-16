@@ -15,11 +15,13 @@ export const AppButton = styled.button<AppButtonProps>`
 
   &:hover {
     background-color: #000;
+    border: 1px solid #000;
     color: #fff;
   }
 
   &:disabled {
     background-color: #aaa;
+    border: 1px solid #aaa;
     color: #fff;
   }
 `;
